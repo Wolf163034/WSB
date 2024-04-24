@@ -1,0 +1,8 @@
+def get_smallest_number(lst):
+    # Use the min() function to find the smallest number in the list
+    smallest_number = min(lst)
+    return smallest_number
+
+# Example usage:
+my_list = [10, 30, 20, 50, 40]
+print("Smallest number in the list:", get_smallest_number(my_list))
