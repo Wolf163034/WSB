@@ -1,0 +1,12 @@
+import random
+
+def shuffle_and_print(lst):
+    # Shuffle the list in place
+    random.shuffle(lst)
+    
+    # Print the shuffled list
+    print("Shuffled list:", lst)
+
+# Example usage:
+specified_list = [1, 2, 3, 4, 5]
+shuffle_and_print(specified_list)
