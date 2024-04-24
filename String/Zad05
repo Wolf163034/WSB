@@ -1,0 +1,16 @@
+def swap_and_concat_strings(str1, str2):
+    # Swap the first two characters of each string
+    swapped_str1 = str2[:2] + str1[2:]
+    swapped_str2 = str1[:2] + str2[2:]
+
+    # Concatenate the swapped strings with a space in between
+    result = swapped_str1 + ' ' + swapped_str2
+
+    return result
+
+# Example usage:
+string1 = 'abc'
+string2 = 'xyz'
+result = swap_and_concat_strings(string1, string2)
+print("Sample Strings:", string1, ',', string2)
+print("Expected Result:", result)
