@@ -1,0 +1,7 @@
+# Define a sample dictionary
+sample_dict = {'a': 1, 'b': 2, 'c': 3}
+
+# Iterate over the dictionary using a for loop
+print("Iterating over dictionary using for loop:")
+for key in sample_dict:
+    print(f"Key: {key}, Value: {sample_dict[key]}")
