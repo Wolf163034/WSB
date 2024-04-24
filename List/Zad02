@@ -1,0 +1,14 @@
+def multiply_list_items(lst):
+    # Initialize the result to 1
+    result = 1
+
+    # Iterate through each item in the list
+    for item in lst:
+        # Multiply the result by the current item
+        result *= item
+
+    return result
+
+# Example usage:
+my_list = [1, 2, 3, 4, 5]
+print("Result of multiplying all items in the list:", multiply_list_items(my_list))
