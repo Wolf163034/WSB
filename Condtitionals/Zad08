@@ -1,0 +1,11 @@
+def print_numbers_except_3_and_6():
+    # Iterate through the numbers from 0 to 6
+    for num in range(7):
+        # Skip printing 3 and 6
+        if num == 3 or num == 6:
+            continue
+        # Print the number
+        print(num, end=" ")
+
+# Call the function to print numbers except 3 and 6
+print_numbers_except_3_and_6()
