@@ -1,0 +1,9 @@
+def add_key_to_dict(dictionary, key, value):
+    # Add the key-value pair to the dictionary
+    dictionary[key] = value
+    return dictionary
+
+# Example usage:
+sample_dict = {0: 10, 1: 20}
+expected_result = add_key_to_dict(sample_dict, 2, 30)
+print("Expected Result:", expected_result)
