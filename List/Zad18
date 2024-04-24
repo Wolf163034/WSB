@@ -1,0 +1,11 @@
+from itertools import permutations
+
+def generate_permutations(input_list):
+    # Generate all permutations of the input list
+    all_permutations = list(permutations(input_list))
+    return all_permutations
+
+# Example usage:
+input_list = [1, 2, 3]
+result = generate_permutations(input_list)
+print("All permutations of the list:", result)
