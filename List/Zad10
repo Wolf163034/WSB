@@ -1,0 +1,18 @@
+def find_words_longer_than_n(words, n):
+    # Initialize an empty list to store words longer than n
+    longer_words = []
+
+    # Iterate over each word in the list
+    for word in words:
+        # Check if the length of the word is longer than n
+        if len(word) > n:
+            # Append the word to the list of longer words
+            longer_words.append(word)
+
+    return longer_words
+
+# Example usage:
+word_list = ['apple', 'banana', 'kiwi', 'orange', 'grape']
+n = 5
+result = find_words_longer_than_n(word_list, n)
+print("Words longer than", n, "characters:", result)
