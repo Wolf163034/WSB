@@ -1,0 +1,9 @@
+def sort_tuples_by_last_element(tuples):
+    # Sort the list of tuples based on the last element of each tuple
+    sorted_tuples = sorted(tuples, key=lambda x: x[-1])
+    return sorted_tuples
+
+# Example usage:
+sample_list = [(2, 5), (1, 2), (4, 4), (2, 3), (2, 1)]
+result = sort_tuples_by_last_element(sample_list)
+print("Sorted list of tuples:", result)
