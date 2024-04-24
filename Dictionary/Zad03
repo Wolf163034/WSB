@@ -1,0 +1,17 @@
+def concatenate_dicts(*dicts):
+    # Create an empty dictionary to store the concatenated result
+    concatenated_dict = {}
+    
+    # Iterate over each dictionary and update the concatenated_dict
+    for dictionary in dicts:
+        concatenated_dict.update(dictionary)
+    
+    return concatenated_dict
+
+# Example usage:
+dic1 = {1: 10, 2: 20}
+dic2 = {3: 30, 4: 40}
+dic3 = {5: 50, 6: 60}
+
+result = concatenate_dicts(dic1, dic2, dic3)
+print("Expected Result:", result)
