@@ -1,0 +1,16 @@
+def insert_end(string):
+    # Check if the length of the string is at least 2
+    if len(string) >= 2:
+        # Extract the last two characters of the string
+        last_two_chars = string[-2:]
+
+        # Repeat the last two characters four times
+        result = last_two_chars * 4
+
+        return result
+    else:
+        return "String length must be at least 2"
+
+# Example usage:
+print(insert_end('Python'))     # Output: onononon
+print(insert_end('Exercises'))  # Output: eseseses
