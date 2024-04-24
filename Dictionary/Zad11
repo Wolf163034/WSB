@@ -1,0 +1,14 @@
+def multiply_dict_values(dictionary):
+    # Initialize the product variable
+    product = 1
+    
+    # Iterate through the values of the dictionary and multiply them together
+    for value in dictionary.values():
+        product *= value
+    
+    return product
+
+# Example usage:
+sample_dict = {'a': 2, 'b': 3, 'c': 4}
+result = multiply_dict_values(sample_dict)
+print("Product of all items in the dictionary:", result)
