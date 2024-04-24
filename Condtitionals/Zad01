@@ -1,0 +1,18 @@
+def find_numbers():
+    # Initialize an empty list to store the numbers
+    numbers = []
+
+    # Iterate over the range from 1500 to 2700 (both included)
+    for num in range(1500, 2701):
+        # Check if the number is divisible by 7 and a multiple of 5
+        if num % 7 == 0 and num % 5 == 0:
+            # If the conditions are satisfied, add the number to the list
+            numbers.append(num)
+
+    return numbers
+
+# Find numbers satisfying the conditions
+result = find_numbers()
+
+# Print the result
+print("Numbers divisible by 7 and multiples of 5 between 1500 and 2700:", result)
