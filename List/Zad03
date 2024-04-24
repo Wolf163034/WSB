@@ -1,0 +1,8 @@
+def get_largest_number(lst):
+    # Use the max() function to find the largest number in the list
+    largest_number = max(lst)
+    return largest_number
+
+# Example usage:
+my_list = [10, 30, 20, 50, 40]
+print("Largest number in the list:", get_largest_number(my_list))
