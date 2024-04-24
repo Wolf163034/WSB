@@ -1,0 +1,14 @@
+class MyClass:
+    def __init__(self, a, b, c):
+        self.a = a
+        self.b = b
+        self.c = c
+
+# Create an object of MyClass
+obj = MyClass(1, 2, 3)
+
+# Get a dictionary from the object's fields
+obj_dict = vars(obj)
+
+# Print the dictionary
+print("Dictionary from object's fields:", obj_dict)
