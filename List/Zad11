@@ -1,0 +1,11 @@
+def have_common_member(list1, list2):
+    # Check if there is at least one common member between the two lists
+    return any(item in list1 for item in list2)
+
+# Example usage:
+list1 = [1, 2, 3, 4, 5]
+list2 = [6, 7, 8, 9, 10]
+list3 = [5, 10, 15, 20]
+
+print("Do list1 and list2 have at least one common member?", have_common_member(list1, list2))
+print("Do list1 and list3 have at least one common member?", have_common_member(list1, list3))
