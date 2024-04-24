@@ -1,0 +1,17 @@
+from collections import Counter
+
+def combine_dicts(d1, d2):
+    # Create a Counter object from the first dictionary
+    combined_dict = Counter(d1)
+    
+    # Update the Counter object with the second dictionary
+    combined_dict.update(d2)
+    
+    return combined_dict
+
+# Example usage:
+d1 = {'a': 100, 'b': 200, 'c': 300}
+d2 = {'a': 300, 'b': 200, 'd': 400}
+
+result = combine_dicts(d1, d2)
+print("Combined dictionary with added values:", result)
