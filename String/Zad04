@@ -1,0 +1,14 @@
+def replace_first_char_occurrences(string):
+    # Get the first character of the string
+    first_char = string[0]
+
+    # Replace all occurrences of the first character with '$', except the first occurrence
+    modified_string = first_char + string[1:].replace(first_char, '$')
+
+    return modified_string
+
+# Example usage:
+sample_string = 'restart'
+result = replace_first_char_occurrences(sample_string)
+print("Sample String:", sample_string)
+print("Expected Result:", result)
