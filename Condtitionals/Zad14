@@ -1,0 +1,25 @@
+def count_digits_letters(input_str):
+    # Initialize counters for letters and digits
+    num_letters = 0
+    num_digits = 0
+    
+    # Iterate through each character in the input string
+    for char in input_str:
+        # Check if the character is a letter
+        if char.isalpha():
+            num_letters += 1
+        # Check if the character is a digit
+        elif char.isdigit():
+            num_digits += 1
+    
+    return num_letters, num_digits
+
+# Sample Data
+sample_data = 'Python 3.2'
+
+# Call the function to count letters and digits
+letters, digits = count_digits_letters(sample_data)
+
+# Print the output
+print("Letters:", letters)
+print("Digits:", digits)
