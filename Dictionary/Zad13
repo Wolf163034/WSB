@@ -1,0 +1,10 @@
+def map_lists_to_dict(keys, values):
+    # Create a dictionary by zipping the two lists together
+    mapped_dict = dict(zip(keys, values))
+    return mapped_dict
+
+# Example usage:
+keys = ['a', 'b', 'c']
+values = [1, 2, 3]
+result = map_lists_to_dict(keys, values)
+print("Mapped dictionary:", result)
