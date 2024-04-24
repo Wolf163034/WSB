@@ -1,0 +1,8 @@
+def generate_square_numbers():
+    # Generate a list of square numbers between 1 and 30
+    square_numbers = [x ** 2 for x in range(1, 6)] + [x ** 2 for x in range(26, 31)]
+    return square_numbers
+
+# Example usage:
+square_numbers_list = generate_square_numbers()
+print("List of square numbers between 1 and 30:", square_numbers_list)
