@@ -1,0 +1,8 @@
+def add_tags(tag, content):
+    # Construct the HTML string with the specified tag around the content
+    html_string = f"<{tag}>{content}</{tag}>"
+    return html_string
+
+# Example usage:
+print(add_tags('i', 'Python'))  # Output: <i>Python</i>
+print(add_tags('b', 'Python Tutorial'))  # Output: <b>Python Tutorial</b>
