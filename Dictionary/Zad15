@@ -1,0 +1,11 @@
+def get_max_min_values(dictionary):
+    # Get the maximum and minimum values of the dictionary
+    max_value = max(dictionary.values())
+    min_value = min(dictionary.values())
+    return max_value, min_value
+
+# Example usage:
+sample_dict = {'a': 10, 'b': 20, 'c': 5}
+max_value, min_value = get_max_min_values(sample_dict)
+print("Maximum value:", max_value)
+print("Minimum value:", min_value)
