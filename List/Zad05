@@ -1,0 +1,12 @@
+def count_matching_strings(strings):
+    count = 0
+    for string in strings:
+        # Check if the string length is 2 or more and the first and last characters are the same
+        if len(string) >= 2 and string[0] == string[-1]:
+            count += 1
+    return count
+
+# Example usage:
+sample_list = ['abc', 'xyz', 'aba', '1221']
+result = count_matching_strings(sample_list)
+print("Number of matching strings:", result)
