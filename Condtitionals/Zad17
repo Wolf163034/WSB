@@ -1,0 +1,11 @@
+def print_alphabet_A():
+    print("  ***  ")
+    print(" *   * ")
+    print(" *   * ")
+    print(" ***** ")
+    print(" *   * ")
+    print(" *   * ")
+    print(" *   * ")
+
+# Call the function to print the alphabet pattern 'A'
+print_alphabet_A()
