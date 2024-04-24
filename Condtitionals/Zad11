@@ -1,0 +1,16 @@
+def generate_2d_array(m, n):
+    # Generate the two-dimensional array using list comprehension
+    two_d_array = [[i * j for j in range(n)] for i in range(m)]
+    return two_d_array
+
+# Get input from the user for number of rows and columns
+m = int(input("Enter the number of rows (m): "))
+n = int(input("Enter the number of columns (n): "))
+
+# Call the function to generate the two-dimensional array
+result = generate_2d_array(m, n)
+
+# Print the generated two-dimensional array
+print("Generated two-dimensional array:")
+for row in result:
+    print(row)
