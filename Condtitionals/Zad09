@@ -1,0 +1,23 @@
+def fibonacci_sequence(limit):
+    # Initialize the Fibonacci sequence with the first two numbers
+    fibonacci_series = [0, 1]
+
+    # Generate the Fibonacci sequence
+    while True:
+        # Calculate the next Fibonacci number by adding the last two numbers
+        next_num = fibonacci_series[-1] + fibonacci_series[-2]
+        
+        # Check if the next Fibonacci number exceeds the limit
+        if next_num > limit:
+            break
+        
+        # Add the next Fibonacci number to the sequence
+        fibonacci_series.append(next_num)
+
+    return fibonacci_series
+
+# Call the function to get the Fibonacci series up to 50
+fibonacci_series = fibonacci_sequence(50)
+
+# Print the Fibonacci series
+print("Fibonacci series up to 50:", fibonacci_series)
