@@ -1,0 +1,17 @@
+def print_sorted_distinct_words(words):
+    # Split the input string into a list of words
+    word_list = words.split(',')
+
+    # Convert the list into a set to get distinct words
+    distinct_words = set(word_list)
+
+    # Sort the set alphanumerically
+    sorted_words = sorted(distinct_words)
+
+    # Print the sorted distinct words
+    print("Sorted distinct words:", ", ".join(sorted_words))
+
+# Example usage:
+input_words = "red, white, black, red, green, black"
+print("Sample Words:", input_words)
+print_sorted_distinct_words(input_words)
