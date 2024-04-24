@@ -1,0 +1,29 @@
+def binary_numbers_divisible_by_5(input_str):
+    # Split the input string into individual binary numbers
+    binary_numbers = input_str.split(',')
+    
+    # Initialize an empty list to store binary numbers divisible by 5
+    divisible_by_5 = []
+    
+    # Iterate through each binary number
+    for binary in binary_numbers:
+        # Convert binary number to decimal
+        decimal = int(binary, 2)
+        
+        # Check if the decimal number is divisible by 5
+        if decimal % 5 == 0:
+            divisible_by_5.append(binary)
+    
+    # Join the binary numbers divisible by 5 into a comma-separated string
+    result = ','.join(divisible_by_5)
+    
+    return result
+
+# Sample Data
+sample_data = '0100,0011,1010,1001,1100,1001'
+
+# Call the function to find binary numbers divisible by 5
+output = binary_numbers_divisible_by_5(sample_data)
+
+# Print the output
+print("Numbers divisible by 5:", output)
