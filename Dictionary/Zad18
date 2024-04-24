@@ -1,0 +1,10 @@
+def is_dict_empty(dictionary):
+    # Check if the dictionary is empty
+    return not bool(dictionary)
+
+# Example usage:
+empty_dict = {}
+non_empty_dict = {'a': 1, 'b': 2}
+
+print("Is the empty_dict empty?", is_dict_empty(empty_dict))
+print("Is the non_empty_dict empty?", is_dict_empty(non_empty_dict))
