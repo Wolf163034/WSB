@@ -1,0 +1,8 @@
+def access_list_indices(lst):
+    # Iterate over the list using enumerate()
+    for index, value in enumerate(lst):
+        print(f"Index: {index}, Value: {value}")
+
+# Example usage:
+my_list = ['apple', 'banana', 'cherry', 'date']
+access_list_indices(my_list)
