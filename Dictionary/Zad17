@@ -1,0 +1,9 @@
+def remove_duplicates_from_dict(dictionary):
+    # Convert the dictionary to a set of tuples and back to a dictionary
+    unique_dict = dict(set(dictionary.items()))
+    return unique_dict
+
+# Example usage:
+sample_dict = {'a': 1, 'b': 2, 'c': 1, 'd': 2}
+result = remove_duplicates_from_dict(sample_dict)
+print("Dictionary after removing duplicates:", result)
