@@ -1,0 +1,9 @@
+def key_exists_in_dict(dictionary, key):
+    # Check if the key exists in the dictionary
+    return key in dictionary
+
+# Example usage:
+sample_dict = {1: 'a', 2: 'b', 3: 'c'}
+given_key = 2
+result = key_exists_in_dict(sample_dict, given_key)
+print(f"Key {given_key} exists in the dictionary:", result)
