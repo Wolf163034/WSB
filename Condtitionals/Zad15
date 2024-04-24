@@ -1,0 +1,27 @@
+import re
+
+def validate_password(password):
+    # Define the regular expressions for each validation criteria
+    regex_upper = re.compile(r'[A-Z]')
+    regex_lower = re.compile(r'[a-z]')
+    regex_digit = re.compile(r'[0-9]')
+    regex_special = re.compile(r'[$#@]')
+    
+    # Check if password meets all criteria
+    if (len(password) >= 6 and len(password) <= 16 and
+        regex_upper.search(password) and
+        regex_lower.search(password) and
+        regex_digit.search(password) and
+        regex_special.search(password)):
+        return True
+    else:
+        return False
+
+# Get input from the user
+password = input("Enter the password: ")
+
+# Validate the password
+if validate_password(password):
+    print("Valid password")
+else:
+    print("Invalid password")
