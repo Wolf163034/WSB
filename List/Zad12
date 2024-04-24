@@ -1,0 +1,9 @@
+def remove_elements(lst):
+    # Use list slicing to remove the 0th, 4th, and 5th elements
+    modified_list = lst[1:4] + lst[6:]
+    return modified_list
+
+# Example usage:
+sample_list = ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+result = remove_elements(sample_list)
+print("Modified list:", result)
