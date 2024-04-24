@@ -1,0 +1,24 @@
+def print_lower_lines():
+    print("Enter lines (blank line to terminate):")
+    
+    # Initialize an empty list to store lines
+    lines = []
+    
+    # Continue reading lines until a blank line is encountered
+    while True:
+        line = input()
+        
+        # Check if the line is blank
+        if not line:
+            break
+        
+        # Add the line to the list
+        lines.append(line.lower())
+    
+    # Print the lines in lowercase
+    print("Output:")
+    for line in lines:
+        print(line)
+
+# Call the function to accept and print lines in lowercase
+print_lower_lines()
