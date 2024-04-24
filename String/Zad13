@@ -1,0 +1,10 @@
+def remove_odd_index_characters(string):
+    # Use string slicing to extract characters with even indices
+    result = string[::2]
+    return result
+
+# Example usage:
+input_string = "Hello World"
+result = remove_odd_index_characters(input_string)
+print("Original string:", input_string)
+print("String after removing characters with odd index values:", result)
