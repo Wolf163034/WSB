@@ -1,0 +1,11 @@
+def print_item_types(datalist):
+    # Iterate through the list
+    for item in datalist:
+        # Print the item and its corresponding type
+        print(f"{item}: {type(item)}")
+
+# Sample List
+datalist = [1452, 11.23, 1+2j, True, 'w3resource', (0, -1), [5, 12], {"class":'V', "section":'A'}]
+
+# Call the function to print each item and its type
+print_item_types(datalist)
