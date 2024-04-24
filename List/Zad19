@@ -1,0 +1,15 @@
+def calculate_list_difference(list1, list2):
+    # Convert the lists to sets
+    set1 = set(list1)
+    set2 = set(list2)
+
+    # Calculate the difference between the sets
+    difference = set1 - set2
+
+    return list(difference)
+
+# Example usage:
+list1 = [1, 2, 3, 4, 5]
+list2 = [3, 4, 5, 6, 7]
+result = calculate_list_difference(list1, list2)
+print("Difference between the two lists:", result)
