@@ -1,0 +1,20 @@
+def is_prime(n):
+    # Check if the number is less than 2
+    if n < 2:
+        return False
+    # Check if the number is divisible by any integer from 2 to the square root of the number
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def all_prime_numbers(numbers):
+    # Check if all numbers in the list are prime
+    return all(is_prime(num) for num in numbers)
+
+# Example usage:
+sample_data = ([0, 3, 4, 7, 9]), ([3, 5, 7, 13]), ([1, 5, 3])
+
+for data in sample_data:
+    result = all_prime_numbers(data)
+    print(f"{data} -> {result}")
