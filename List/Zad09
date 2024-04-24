@@ -1,0 +1,10 @@
+def clone_list(lst):
+    # Use the copy() method to create a shallow copy of the list
+    cloned_list = lst.copy()
+    return cloned_list
+
+# Example usage:
+original_list = [1, 2, 3, 4, 5]
+cloned_list = clone_list(original_list)
+print("Original list:", original_list)
+print("Cloned list:", cloned_list)
