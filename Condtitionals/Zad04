@@ -1,0 +1,22 @@
+def print_pattern(rows):
+    # Iterate over rows
+    for i in range(rows):
+        # Print '*' characters in each row up to current row number
+        for j in range(i + 1):
+            print("*", end=" ")
+        # Move to the next line after printing each row
+        print()
+
+    # Iterate over rows in reverse order, excluding the first row
+    for i in range(rows - 1, 0, -1):
+        # Print '*' characters in each row up to current row number
+        for j in range(i):
+            print("*", end=" ")
+        # Move to the next line after printing each row
+        print()
+
+# Number of rows for the pattern
+num_rows = 5
+
+# Call the function to print the pattern
+print_pattern(num_rows)
