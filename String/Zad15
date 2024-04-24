@@ -1,0 +1,12 @@
+# Take input from the user
+user_input = input("Enter a string: ")
+
+# Convert the input to upper case
+upper_case = user_input.upper()
+
+# Convert the input to lower case
+lower_case = user_input.lower()
+
+# Display the input back in upper and lower cases
+print("Input in upper case:", upper_case)
+print("Input in lower case:", lower_case)
