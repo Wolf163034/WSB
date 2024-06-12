@@ -1,0 +1,106 @@
+import openpyxl
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
+# Stałe
+WORKBOOK_PATH = 'D:\\attendance.xlsx'
+SHEET_NAME = 'Sheet1'
+SENDER_EMAIL = 'twoj-email@gmail.com'
+SENDER_PASSWORD = 'twoje-haslo'
+STAFF_EMAILS = ['wykladowca1@example.com', 'wykladowca2@example.com', 'wykladowca3@example.com']
+
+# Wiadomości ostrzegawcze
+WARNING_MESSAGES = {
+    1: "Ostrzeżenie! Możesz opuścić tylko jeszcze jeden dzień zajęć z CI.",
+    2: "Ostrzeżenie! Możesz opuścić tylko jeszcze jeden dzień zajęć z Pythona.",
+    3: "Ostrzeżenie! Możesz opuścić tylko jeszcze jeden dzień zajęć z DM."
+}
+
+def save_file(book):
+    """Zapisz arkusz Excel."""
+    try:
+        book.save(WORKBOOK_PATH)
+        print("Arkusz zapisany!")
+    except Exception as e:
+        print(f"Błąd zapisu arkusza: {e}")
+
+def send_email(to_list, subject, message):
+    """Wyślij e-mail do określonych odbiorców."""
+    try:
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.starttls()
+        server.login(SENDER_EMAIL, SENDER_PASSWORD)
+        for to_email in to_list:
+            msg = MIMEMultipart()
+            msg['From'] = SENDER_EMAIL
+            msg['To'] = to_email
+            msg['Subject'] = subject
+            msg.attach(MIMEText(message, 'plain'))
+            server.sendmail(SENDER_EMAIL, to_email, msg.as_string())
+        server.quit()
+        print("E-mail wysłany do:", to_list)
+    except Exception as e:
+        print(f"Nie udało się wysłać e-maila: {e}")
+
+def check_attendance(no_of_days, row_nums, subject_code, sheet):
+    """Sprawdź obecność i wyślij ostrzeżenia lub powiadomienia."""
+    warning_threshold = 2
+    subject_names = {1: 'CI', 2: 'Python', 3: 'DM'}
+    
+    students_to_warn = []
+    students_with_lack = []
+    lack_roll_numbers = ""
+    
+    for idx, days in enumerate(no_of_days):
+        student_email = sheet.cell(row=row_nums[idx], column=2).value
+        roll_no = sheet.cell(row=row_nums[idx], column=1).value
+        if days == warning_threshold:
+            students_to_warn.append(student_email)
+        elif days > warning_threshold:
+            lack_roll_numbers += f"{roll_no} "
+            students_with_lack.append(student_email)
+    
+    if students_to_warn:
+        send_email(students_to_warn, 'Ostrzeżenie dotyczące obecności', WARNING_MESSAGES[subject_code])
+    
+    if students_with_lack:
+        subject = subject_names[subject_code]
+        student_message = f"Masz zaległości w obecności na zajęciach z {subject}!"
+        staff_message = f"Następujący studenci mają zaległości w obecności na zajęciach z {subject}: {lack_roll_numbers.strip()}"
+        send_email(students_with_lack, 'Brak obecności', student_message)
+        send_email([STAFF_EMAILS[subject_code - 1]], 'Raport braków obecności', staff_message)
+
+def update_attendance(sheet, subject_code, absentees):
+    """Zaktualizuj obecność dla danego przedmiotu i nieobecnych studentów."""
+    no_of_days = []
+    row_nums = []
+    for student in absentees:
+        for i in range(2, sheet.max_row + 1):
+            if sheet.cell(row=i, column=1).value == student:
+                col = subject_code + 2
+                current_leaves = sheet.cell(row=i, column=col).value
+                current_leaves += 1
+                sheet.cell(row=i, column=col).value = current_leaves
+                save_file(book)
+                no_of_days.append(current_leaves)
+                row_nums.append(i)
+    check_attendance(no_of_days, row_nums, subject_code, sheet)
+
+# Wczytanie arkusza i karty
+book = openpyxl.load_workbook(WORKBOOK_PATH)
+sheet = book[SHEET_NAME]
+
+# Główna pętla do wprowadzania danych przez użytkownika
+while True:
+    print("1--->CI\n2--->Python\n3--->DM")
+    subject_code = int(input("Wprowadź kod przedmiotu: "))
+    no_of_absentees = int(input('Liczba nieobecnych: '))
+    
+    if no_of_absentees > 0:
+        absentees = list(map(int, input('Wprowadź numery indeksów (oddzielone spacjami): ').split()))
+        update_attendance(sheet, subject_code, absentees)
+    
+    resp = int(input('Inny przedmiot? 1---->tak 0--->nie: '))
+    if resp == 0:
+        break
